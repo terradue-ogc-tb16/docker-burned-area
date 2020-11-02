@@ -63,7 +63,7 @@ docker run --rm -it terradue/nb-burned-area:latest burned-area --params > burned
 Stage the Sentinel-2 pre and post acquisitions:
 
 ```console
-cwltool stage-in.cwl stage-in-pre.yaml
+cwltool stage-in.cwl stage-in-pre.yml
 ```
 
 In the burned-area.yml file, update the `path` for the pre-event acquisition:
@@ -76,7 +76,7 @@ pre_event:
 Then for the post acquisition:
 
 ```console
-cwltool stage-in.cwl stage-in-post.yaml
+cwltool stage-in.cwl stage-in-post.yml
 ```
 
 Update the path for the post-event acquisition:
