@@ -60,6 +60,33 @@ Get the parameters:
 docker run --rm -it terradue/nb-burned-area:latest burned-area --params > burned-area.yml
 ```
 
+Stage the Sentinel-2 pre and post acquisitions:
+
+```console
+cwltool stage-in.cwl stage-in-pre.yaml
+```
+
+In the burned-area.yml file, update the `path` for the pre-event acquisition:
+
+```yaml
+pre_event:
+  class: Directory
+  path: /workspace/ogc-tb16/wdir/5qoilug5
+```
+Then for the post acquisition:
+
+```console
+cwltool stage-in.cwl stage-in-post.yaml
+```
+
+Update the path for the post-event acquisition:
+
+```yaml
+post_event:
+  class: Directory
+  path: /workspace/ogc-tb16/wdir/gclw8a9w
+```
+
 Execute the CWL script with `cwltool`:
 
 ```console
